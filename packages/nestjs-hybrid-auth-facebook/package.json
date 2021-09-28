@@ -6,10 +6,10 @@
   "author": "Manish Jangir <mjangir70@gmail.com> (https://manishjangir.com)",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mjangir/nest-hybrid-auth.git"
+    "url": "git+https://github.com/mjangir/nestjs-hybrid-auth.git"
   },
   "bugs": {
-    "url": "https://github.com/mjangir/nest-hybrid-auth/issues"
+    "url": "https://github.com/mjangir/nestjs-hybrid-auth/issues"
   },
   "homepage": "https://nestjs-hybrid-auth.manishjangir.com",
   "keywords": [
@@ -38,7 +38,7 @@
     "test:watch": "npm run test -- --watchAll",
     "start": "tsdx watch --target node --tsconfig tsconfig.build.json --verbose --noClean",
     "build": "tsdx build --target node --tsconfig tsconfig.build.json",
-    "lint": "tsdx lint",
+    "lint": "tsdx lint src",
     "prepublish": "npm run build"
   },
   "dependencies": {

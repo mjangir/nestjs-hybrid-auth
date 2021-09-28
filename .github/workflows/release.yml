@@ -6,7 +6,7 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
-    if: github.repository == 'mjangir/nest-hybrid-auth'
+    if: github.repository == 'mjangir/nestjs-hybrid-auth'
     steps:
       - uses: actions/checkout@v2
         with:

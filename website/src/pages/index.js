@@ -79,7 +79,7 @@ function HomepageHeader() {
           </Link>
           <Link
             className={clsx('margin-left--md', styles.indexTryMeButton)}
-            to="https://github.com/mjangir/nest-hybrid-auth"
+            to="https://github.com/mjangir/nestjs-hybrid-auth"
           >
             <Translate>Github</Translate>
           </Link>
