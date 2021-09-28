@@ -4,6 +4,11 @@
    <img src="media/nestjs-hybrid-auth.png" alt="NestJS Hybrid Auth"/>
 </p>
 
+![npm type definitions](https://img.shields.io/npm/types/typescript)
+![npm](https://img.shields.io/npm/v/@nestjs-hybrid-auth/all)
+[![compressed size](https://github.com/mjangir/nestjs-hybrid-auth/actions/workflows/size.yml/badge.svg)](https://github.com/mjangir/nestjs-hybrid-auth/actions/workflows/size.yml)
+![GitHub](https://img.shields.io/github/license/mjangir/nestjs-hybrid-auth?label=license)
+
 NestJS hybrid auth is a dynamic nestjs module or assembling of individual modules written over passport authentication library which enables you to integrate social login in your nestjs application for various identity providers such as Facebook, Google, Instagram and many more.
 
 **Please visit https://nestjs-hybrid-auth.manishjangir.com for complete documentation**
