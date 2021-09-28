@@ -14,16 +14,21 @@
     "changeset": "changeset",
     "release": "changeset publish",
     "postinstall": "husky install",
-    "lint:staged": "lint-staged"
+    "lint:staged": "lint-staged",
+    "commit": "cz"
   },
   "devDependencies": {
     "@changesets/changelog-github": "^0.4.1",
     "@changesets/cli": "^2.17.0",
+    "@commitlint/cli": "^13.2.0",
+    "@commitlint/config-conventional": "^13.2.0",
     "@nestjs/common": "^8.0.7",
     "@nestjs/core": "^8.0.7",
     "@nestjs/passport": "^8.0.1",
     "@types/jest": "^27.0.2",
     "@types/lodash": "^4.14.174",
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "^3.3.0",
     "husky": "^7.0.2",
     "lerna": "^4.0.0",
     "lint-staged": "^11.1.2",
@@ -43,5 +48,15 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   }
 }
