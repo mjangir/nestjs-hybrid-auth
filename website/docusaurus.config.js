@@ -25,7 +25,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
             sidebarPath: require.resolve('./sidebars.js'),
             // Please change this to your repo.
             editUrl:
-              'https://github.com/mjangir/nest-hybrid-auth/blob/main/website/',
+              'https://github.com/mjangir/nestjs-hybrid-auth/blob/main/website/',
           },
           theme: {
             customCss: require.resolve('./src/css/custom.css'),
@@ -40,7 +40,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
         announcementBar: {
           id: 'github-star',
           content:
-            'If you like NestJS Hybrid Auth, <a target="_blank" rel="noopener noreferrer" href="https://github.com/mjangir/nest-hybrid-auth">give me a star on GitHub</a>! ⭐️',
+            'If you like NestJS Hybrid Auth, <a target="_blank" rel="noopener noreferrer" href="https://github.com/mjangir/nestjs-hybrid-auth">give me a star on GitHub</a>! ⭐️',
           backgroundColor: 'var(--ifm-color-primary)',
           textColor: '#FFF',
           isCloseable: false,
@@ -59,7 +59,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
               label: 'Docs',
             },
             {
-              href: 'https://github.com/mjangir/nest-hybrid-auth',
+              href: 'https://github.com/mjangir/nestjs-hybrid-auth',
               label: 'GitHub',
               position: 'right',
             },
@@ -107,7 +107,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
               items: [
                 {
                   label: 'GitHub',
-                  href: 'https://github.com/mjangir/nest-hybrid-auth',
+                  href: 'https://github.com/mjangir/nestjs-hybrid-auth',
                 },
               ],
             },
