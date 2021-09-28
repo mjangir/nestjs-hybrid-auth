@@ -1,0 +1,41 @@
+{
+  "name": "nestjs-hybrid-auth",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "lerna": "lerna",
+    "dev": "lerna run start --stream --parallel",
+    "test": "lerna run test --",
+    "build": "lerna run build",
+    "prepublish": "lerna run prepublish",
+    "format": "prettier --write 'packages/*/src/**/*' 'README.md'",
+    "changeset": "changeset",
+    "release": "changeset publish",
+    "precommit": "lint-staged"
+  },
+  "devDependencies": {
+    "@changesets/changelog-github": "^0.4.1",
+    "@changesets/cli": "^2.17.0",
+    "@nestjs/common": "^8.0.7",
+    "@nestjs/core": "^8.0.7",
+    "@nestjs/passport": "^8.0.1",
+    "@types/jest": "^27.0.2",
+    "@types/lodash": "^4.14.174",
+    "husky": "^7.0.2",
+    "lerna": "^4.0.0",
+    "lint-staged": "^11.1.2",
+    "passport": "^0.5.0",
+    "prettier": "^2.4.1",
+    "reflect-metadata": "^0.1.13",
+    "tsdx": "^0.14.1",
+    "typescript": "^4.4.3"
+  },
+  "lint-staged": {
+    "**/*.{ts,md,mdx,js}": [
+      "npm run format",
+      "tsdx lint"
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+*.log
+node_modules
+
+# Generated directories and files
+.idea/
+.next
+.docusaurus
+.cache
+.cache-loader
+coverage/
+dist/
+build/
+.DS_Store
+.history

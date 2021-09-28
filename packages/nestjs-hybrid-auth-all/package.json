@@ -1,0 +1,54 @@
+{
+  "name": "@nestjs-hybrid-auth/all",
+  "description": "NestJS social authentication provider using passportJS",
+  "version": "0.0.0",
+  "license": "MIT",
+  "author": "Manish Jangir <mjangir70@gmail.com> (https://manishjangir.com)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mjangir/nest-hybrid-auth.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mjangir/nest-hybrid-auth/issues"
+  },
+  "homepage": "https://nestjs-hybrid-auth.manishjangir.com",
+  "keywords": [
+    "nestjs twitter",
+    "nestjs passport",
+    "nestjs github login",
+    "twitter auth",
+    "nestjs google auth",
+    "nestjs login",
+    "nestjs social login",
+    "nestjs facebook"
+  ],
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "@nestjs/common": "^8.0.0",
+    "@nestjs/core": "^8.0.0",
+    "@nestjs/passport": "^8.0.0",
+    "express-session": "^1.17.0",
+    "passport": "^0.5.0",
+    "reflect-metadata": "^0.1.13"
+  },
+  "scripts": {
+    "test": "tsdx test --env=jsdom",
+    "test:watch": "npm run test -- --watchAll",
+    "start": "tsdx watch --target node --tsconfig tsconfig.build.json --verbose --noClean",
+    "build": "tsdx build --target node --tsconfig tsconfig.build.json",
+    "lint": "tsdx lint",
+    "prepublish": "npm run build"
+  },
+  "dependencies": {
+    "@nestjs-hybrid-auth/core": "^0.0.0",
+    "@nestjs-hybrid-auth/facebook": "^0.0.0",
+    "@nestjs-hybrid-auth/google": "^0.0.0",
+    "@nestjs-hybrid-auth/linkedin": "^0.0.0",
+    "@nestjs-hybrid-auth/github": "^0.0.0",
+    "@nestjs-hybrid-auth/twitter": "^0.0.0"
+  }
+}
