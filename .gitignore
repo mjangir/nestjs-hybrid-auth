@@ -3,12 +3,12 @@ node_modules/
 package-lock.json
 
 *.log
-node_modules
+node_module
 
 # Generated directories and files
 .idea/
 .next
-.docusaurus
+.docusaurus/
 .cache
 .cache-loader
 coverage/

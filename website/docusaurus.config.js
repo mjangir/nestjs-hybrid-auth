@@ -79,10 +79,6 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
                   label: 'How To Use',
                   to: '/docs/introduction/how-to-use',
                 },
-                {
-                  label: 'Examples',
-                  to: '/docs/examples/bootstrap',
-                },
               ],
             },
             {
