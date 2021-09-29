@@ -94,7 +94,7 @@ export default function Home() {
   return (
     <Layout
       title={`${siteConfig.title} Documentation`}
-      description="Build stepper forms over Formik with ease"
+      description="Integrate social login into your nestjs application"
     >
       <HomepageHeader />
       <main>
