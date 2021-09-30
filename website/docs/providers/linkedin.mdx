@@ -105,7 +105,7 @@ import {
 } from '@nestjs-hybrid-auth/linkedin';
 
 @Injectable()
-class HybridAuthConfig implements LinkedinAuthModuleOptionsFactory {
+class LinkedinAuthConfig implements LinkedinAuthModuleOptionsFactory {
   constructor(private configService: ConfigService) {}
 
   createModuleOptions(): LinkedinAuthModuleOptions {
@@ -133,7 +133,7 @@ import { LinkedinAuthModule } from '@nestjs-hybrid-auth/linkedin';
     LinkedinAuthModule.forRootAsync({
       imports: [ConfigModule],
       inject: [ConfigService],
-      useClass: HybridAuthConfig,
+      useClass: LinkedinAuthConfig,
     }),
   ],
   controllers: [AppController],

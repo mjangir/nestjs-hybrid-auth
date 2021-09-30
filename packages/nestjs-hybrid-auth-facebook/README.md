@@ -245,8 +245,8 @@ interface FacebookAuthModuleOptionsFactory {
 
 ## Have Issues?
 
-If you still have trouble setting up the workflow properly, please file an issue at [Issues](https://facebook.com/mjangir/nestjs-hybrid-auth/issues) page.
+If you still have trouble setting up the workflow properly, please file an issue at [Issues](https://github.com/mjangir/nestjs-hybrid-auth/issues) page.
 
 ## Maintainers
 
-[Manish Jangir](https://facebook.com/mjangir)
+[Manish Jangir](https://github.com/mjangir)

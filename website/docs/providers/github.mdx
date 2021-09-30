@@ -105,7 +105,7 @@ import {
 } from '@nestjs-hybrid-auth/github';
 
 @Injectable()
-class HybridAuthConfig implements GithubAuthModuleOptionsFactory {
+class GithubAuthConfig implements GithubAuthModuleOptionsFactory {
   constructor(private configService: ConfigService) {}
 
   createModuleOptions(): GithubAuthModuleOptions {
@@ -133,7 +133,7 @@ import { GithubAuthModule } from '@nestjs-hybrid-auth/github';
     GithubAuthModule.forRootAsync({
       imports: [ConfigModule],
       inject: [ConfigService],
-      useClass: HybridAuthConfig,
+      useClass: GithubAuthConfig,
     }),
   ],
   controllers: [AppController],

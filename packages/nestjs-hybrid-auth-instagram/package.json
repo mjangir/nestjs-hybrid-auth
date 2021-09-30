@@ -1,6 +1,6 @@
 {
-  "name": "@nestjs-hybrid-auth/all",
-  "description": "NestJS social authentication provider using passportJS",
+  "name": "@nestjs-hybrid-auth/instagram",
+  "description": "NestJS instagram authentication using passport",
   "version": "1.0.0",
   "license": "MIT",
   "author": "Manish Jangir <mjangir70@gmail.com> (https://manishjangir.com)",
@@ -13,14 +13,13 @@
   },
   "homepage": "https://nestjs-hybrid-auth.manishjangir.com",
   "keywords": [
-    "nestjs twitter",
+    "nestjs instagram",
     "nestjs passport",
-    "nestjs github login",
-    "twitter auth",
-    "nestjs google auth",
+    "nestjs instagram login",
+    "instagram auth",
+    "nestjs instagram auth",
     "nestjs login",
-    "nestjs social login",
-    "nestjs facebook"
+    "nestjs social login"
   ],
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -31,7 +30,6 @@
     "@nestjs/common": "^8.0.0",
     "@nestjs/core": "^8.0.0",
     "@nestjs/passport": "^8.0.0",
-    "express-session": "^1.17.0",
     "passport": "^0.5.0",
     "reflect-metadata": "^0.1.13"
   },
@@ -45,11 +43,10 @@
   },
   "dependencies": {
     "@nestjs-hybrid-auth/core": "^1.0.0",
-    "@nestjs-hybrid-auth/facebook": "^1.0.0",
-    "@nestjs-hybrid-auth/instagram": "^1.0.0",
-    "@nestjs-hybrid-auth/google": "^1.0.0",
-    "@nestjs-hybrid-auth/linkedin": "^1.0.0",
-    "@nestjs-hybrid-auth/github": "^1.0.0",
-    "@nestjs-hybrid-auth/twitter": "^1.0.0"
-  }
+    "@types/lodash": "^4.14.174",
+    "@types/passport-instagram": "^1.0.2",
+    "lodash": "^4.17.21",
+    "passport-instagram": "^1.0.0"
+  },
+  "devDependencies": {}
 }

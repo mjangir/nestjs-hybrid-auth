@@ -2677,6 +2677,14 @@
     "@types/passport" "*"
     "@types/passport-oauth2" "*"
 
+"@types/passport-instagram@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@types/passport-instagram/-/passport-instagram-1.0.2.tgz#00b653fc3cd7abf5fb213c9d37f37d465e33cd6c"
+  integrity sha512-wlwHxx2pDzL5ILTXvnrTEdoUlTPNMf8YZbasM3jyIcnOZBiodsUJcE7kSGPM5L+urDyL0GajiStU6F+FyP2xjA==
+  dependencies:
+    "@types/express" "*"
+    "@types/passport" "*"
+
 "@types/passport-linkedin-oauth2@^1.5.3":
   version "1.5.3"
   resolved "https://registry.yarnpkg.com/@types/passport-linkedin-oauth2/-/passport-linkedin-oauth2-1.5.3.tgz#8bfaa0064f27f19b748f113ea1300f126e13e43a"
@@ -8135,6 +8143,13 @@ passport-google-oauth20@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/passport-google-oauth20/-/passport-google-oauth20-2.0.0.tgz#0d241b2d21ebd3dc7f2b60669ec4d587e3a674ef"
   integrity sha512-KSk6IJ15RoxuGq7D1UKK/8qKhNfzbLeLrG3gkLZ7p4A6DBCcv7xpyQwuXtWdpyR0+E0mwkpjY1VfPOhxQrKzdQ==
+  dependencies:
+    passport-oauth2 "1.x.x"
+
+passport-instagram@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/passport-instagram/-/passport-instagram-1.0.0.tgz#eaa2b42d11473bcfda5190f26234cf485f645656"
+  integrity sha1-6qK0LRFHO8/aUZDyYjTPSF9kVlY=
   dependencies:
     passport-oauth2 "1.x.x"
 

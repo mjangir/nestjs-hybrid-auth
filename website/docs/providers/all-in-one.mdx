@@ -6,20 +6,6 @@ sidebar_position: 1
 
 Implement various social identity provider authentication in your NestJS application for e.g. Google, Facebook, Twitter and many more.
 
-## Prerequisites
-
-The library requires you to install few peer dependencies
-
-```bash
-npm install @nestjs/passport passport reflect-metadata --save
-```
-
-OR
-
-```bash
-yarn add @nestjs/passport passport reflect-metadata
-```
-
 ## Install
 
 ```bash
@@ -36,9 +22,7 @@ yarn add @nestjs-hybrid-auth/all
 
 This package is an assembling of all the individual nestjs hybrid auth provider packages and exports one single [dynamic nestjs module](https://docs.nestjs.com/fundamentals/dynamic-modules). The module takes configuration for all social providers both synchronously and asynchronously using `forRoot` and `forRootAsync` static methods.
 
-## Example Code For app.module.ts
-
-### Simple static configuration
+## Sync Module Configuration
 
 If you have all of your social providers credentials and configuration handy in an object, just pass them in `.forRoot` static method to register the module. The options object is type of `HybridAuthModuleOptions`.
 
@@ -67,12 +51,21 @@ import { HybridAuthModule } from '@nestjs-hybrid-auth/all';
 export class AppModule {}
 ```
 
-### `useFactory` to get the ConfigService injected.
+## Async Module Configuration
 
-If you want to make use of nest's [ConfigModule](https://docs.nestjs.com/techniques/configuration#installation) to get the auth configuration for all the providers from a `.env` config file, use `forRootAsync` static method. The options to this method are typeof `HybridAuthModuleAsyncOptions` which accepts a `useFactory` property. `useFactory` is a function which gets the instances injected whatever has been provided in `inject` array. You can use those instances to prepare and return the actual `HybridAuthModuleOptions` object. ConfigService can be one of them as per your choice.
+If you get the configurations for each identity provider asynchronously through any config service or so, use `forRootAsync` static method to load them. The options would be same but value for each provider would be their AsyncOptions equivalent. Please refer to below code:
+
+### Example `useFactory`
+
+It is same as [this config](./facebook#usefactory-to-get-the-configservice-injected) on Facebook page.
 
 ```typescript
-import { HybridAuthModule } from '@nestjs-hybrid-auth/all';
+import { Module } from '@nestjs/common';
+import { ConfigModule, ConfigService } from '@nestjs/config';
+import {
+  HybridAuthModule,
+  FacebookAuthModuleOptions,
+} from '@nestjs-hybrid-auth/all';
 
 @Module({
   imports: [
@@ -82,69 +75,51 @@ import { HybridAuthModule } from '@nestjs-hybrid-auth/all';
       expandVariables: true,
     }),
     HybridAuthModule.forRootAsync({
-      imports: [ConfigModule],
-      inject: [ConfigService],
-      useFactory: (configService: ConfigService) => ({
-        google: {
-          clientID: configService.get('GOOGLE_CLIENT_ID'),
-          clientSecret: configService.get('GOOGLE_CLIENT_SECRET'),
-          callbackURL: configService.get('GOOGLE_CALLBACK_URL'),
-        },
-        facebook: {
+      facebook: {
+        useFactory: (
+          configService: ConfigService
+        ): FacebookAuthModuleOptions => ({
           clientID: configService.get('FACEBOOK_CLIENT_ID'),
           clientSecret: configService.get('FACEBOOK_CLIENT_SECRET'),
           callbackURL: configService.get('FACEBOOK_CALLBACK_URL'),
-        },
-        // Rest of the providers
-      }),
-    }),
-  ],
-  controllers: [AppController],
-  providers: [AppService],
-})
-export class AppModule {}
-```
-
-### Use `useClass` to get your auth config from a class
-
-If the `useFactory` makes your app module bloated with a lot of boilerplate code, you can `useClass` to provide an existing config provider class. The class must implement `HybridAuthOptionsFactory` interface and `createHybridAuthOptions` method. This method should return `HybridAuthModuleOptions` object. Similar to `useFactory`, whatever you provide in `inject` array, it will get injected in the constructor of your class. Follow the example:
-
-**hybrid-auth.config.ts**
-
-```typescript
-import { ConfigService } from '@nestjs/config';
-import {
-  HybridAuthModuleOptions,
-  HybridAuthOptionsFactory,
-} from '@nestjs-hybrid-auth/all';
-
-@Injectable()
-class HybridAuthConfig implements HybridAuthOptionsFactory {
-  constructor(private configService: ConfigService) {}
-
-  createHybridAuthOptions(): HybridAuthModuleOptions {
-    return {
-      google: {
-        clientID: configService.get('GOOGLE_CLIENT_ID'),
-        clientSecret: configService.get('GOOGLE_CLIENT_SECRET'),
-        callbackURL: configService.get('GOOGLE_CALLBACK_URL'),
-      },
-      facebook: {
-        clientID: configService.get('FACEBOOK_CLIENT_ID'),
-        clientSecret: configService.get('FACEBOOK_CLIENT_SECRET'),
-        callbackURL: configService.get('FACEBOOK_CALLBACK_URL'),
+        }),
+        inject: [ConfigService],
       },
       // Rest of the providers
+    }),
+  ],
+})
+export class AllAsyncFactoryModule {}
+```
+
+### Example `useClass`
+
+It is same as [this config](./facebook#use-useclass-to-get-your-auth-config-from-a-class) on Facebook page.
+
+```typescript
+import { Module, Injectable } from '@nestjs/common';
+import { ConfigModule, ConfigService } from '@nestjs/config';
+import {
+  HybridAuthModule,
+  FacebookAuthModuleOptions,
+  FacebookAuthModuleOptionsFactory,
+} from '@nestjs-hybrid-auth/all';
+
+// We create a config provider class for useClass
+@Injectable()
+export class FacebookAuthConfig implements FacebookAuthModuleOptionsFactory {
+  constructor(private configService: ConfigService) {}
+
+  createModuleOptions(): FacebookAuthModuleOptions {
+    return {
+      clientID: this.configService.get('FACEBOOK_CLIENT_ID'),
+      clientSecret: this.configService.get('FACEBOOK_CLIENT_SECRET'),
+      callbackURL: this.configService.get('FACEBOOK_CALLBACK_URL'),
     };
   }
 }
-```
 
-**app.module.ts**
-
-```typescript
-import { HybridAuthModule } from '@nestjs-hybrid-auth/all';
-
+// Actual app module
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -153,24 +128,21 @@ import { HybridAuthModule } from '@nestjs-hybrid-auth/all';
       expandVariables: true,
     }),
     HybridAuthModule.forRootAsync({
-      imports: [ConfigModule],
-      inject: [ConfigService],
-      useClass: HybridAuthConfig,
+      facebook: {
+        useClass: FacebookAuthConfig,
+      },
+      // Rest of the providers
     }),
   ],
-  controllers: [AppController],
-  providers: [AppService],
 })
-export class AppModule {}
+export class AllAsyncClassModule {}
 ```
 
-## Example Code For Controller
+## Controller Configuration
 
 Once you have setup the module properly in module file, its time to configure your route handlers to make the user properly redirected to appropriate identity provider's login page. `@nestjs-hybrid-auth/all` exports route handler guards for all identity providers it supports from `@nestjs-hybrid-auth/<identity-provider>` where `identity-provider` can be `facebook/google/linkedin/twitter` etc.
 
 Each route will have two variants. One is to redirect to social login page and the other is to collect the response such as access/refresh tokens and user profile etc. The result will be attached to `Request` object's `hybridAuthResult` property as shown in the example below.
-
-### app.controller.ts
 
 #### This controller examples shows facebook login using hybrid auth.
 
@@ -223,34 +195,21 @@ If you are configuring your module with `forRoot` static method, pass in the mod
 interface HybridAuthModuleOptions {
   google: GoogleAuthModuleOptions;
   facebook: FacebookAuthModuleOptions;
-  linkedin: LinkedinAuthModuleOptions;
-  twitter: TwitterAuthModuleOptions;
-  github: GithubAuthModuleOptions;
+  // List goes on for other providers
 }
 ```
 
 ### HybridAuthModuleAsyncOptions
 
-If you want to configure the `HybridAuthModule` dynamically having the config or other services injected, pass in async options in the `forRootAsync` static method. Please refer to the example above for `useFactory` and `useClass` properties.
+If you want to provide the async configurations for each identity provider, use the following `HybridAuthModuleAsyncOptions` object.
+
+The value of each provider is [kind of this](./facebook#facebookauthmoduleasyncoptions)
 
 ```typescript
 interface HybridAuthModuleAsyncOptions {
-  useExisting?: Type<HybridAuthOptionsFactory>;
-  useClass?: Type<HybridAuthOptionsFactory>;
-  useFactory?: (
-    ...args: any[]
-  ) => Promise<HybridAuthModuleOptions> | HybridAuthModuleOptions;
-  inject?: any[];
-}
-```
-
-### HybridAuthOptionsFactory
-
-```typescript
-interface HybridAuthOptionsFactory {
-  createHybridAuthOptions():
-    | Promise<HybridAuthModuleOptions>
-    | HybridAuthModuleOptions;
+  google: GoogleAuthModuleAsyncOptions;
+  facebook: FacebookAuthModuleAsyncOptions;
+  // List goes on for other providers
 }
 ```
 
@@ -260,8 +219,8 @@ interface HybridAuthOptionsFactory {
 
 ## Have Issues?
 
-If you still have trouble setting up the workflow properly, please file an issue at [Issues](https://facebook.com/mjangir/nestjs-hybrid-auth/issues) page.
+If you still have trouble setting up the workflow properly, please file an issue at [Issues](https://github.com/mjangir/nestjs-hybrid-auth/issues) page.
 
 ## Maintainers
 
-[Manish Jangir](https://facebook.com/mjangir)
+[Manish Jangir](https://github.com/mjangir)
