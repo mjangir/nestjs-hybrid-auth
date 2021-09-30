@@ -1,5 +1,11 @@
 # @nestjs-hybrid-auth/core
 
+## 1.0.1
+
+### Patch Changes
+
+- [`1f72955`](https://github.com/mjangir/nestjs-hybrid-auth/commit/1f72955068e029e0648c1a534a13026bbd5d2ab8) Thanks [@mjangir](https://github.com/mjangir)! - Exported ModuleOptionsFactory type for internal use in other packages
+
 ## 1.0.0
 
 ### Major Changes
