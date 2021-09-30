@@ -1,5 +1,17 @@
 # @nestjs-hybrid-auth/all
 
+## 1.0.1
+
+### Patch Changes
+
+- [`1f72955`](https://github.com/mjangir/nestjs-hybrid-auth/commit/1f72955068e029e0648c1a534a13026bbd5d2ab8) Thanks [@mjangir](https://github.com/mjangir)! - Fix async configuration issue in forRootAsync static method
+
+* [`1f72955`](https://github.com/mjangir/nestjs-hybrid-auth/commit/1f72955068e029e0648c1a534a13026bbd5d2ab8) Thanks [@mjangir](https://github.com/mjangir)! - Updated documentation with new options
+
+* Updated dependencies [[`1f72955`](https://github.com/mjangir/nestjs-hybrid-auth/commit/1f72955068e029e0648c1a534a13026bbd5d2ab8), [`1f72955`](https://github.com/mjangir/nestjs-hybrid-auth/commit/1f72955068e029e0648c1a534a13026bbd5d2ab8)]:
+  - @nestjs-hybrid-auth/facebook@1.0.1
+  - @nestjs-hybrid-auth/core@1.0.1
+
 ## 1.0.0
 
 ### Major Changes
