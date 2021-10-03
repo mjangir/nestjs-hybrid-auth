@@ -128,6 +128,8 @@ class AuthController {
 - [LinkedIn](https://nestjs-hybrid-auth.manishjangir.com/docs/providers/linkedin)
 - [Twitter](https://nestjs-hybrid-auth.manishjangir.com/docs/providers/twitter)
 - [GitHub](https://nestjs-hybrid-auth.manishjangir.com/docs/providers/github)
+- [Instagram](https://nestjs-hybrid-auth.manishjangir.com/docs/providers/instagram)
+- [Twitch](https://nestjs-hybrid-auth.manishjangir.com/docs/providers/twitch)
 
 ## Related
 
