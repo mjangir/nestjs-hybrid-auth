@@ -1,5 +1,16 @@
 # @nestjs-hybrid-auth/all
 
+## 1.1.0
+
+### Minor Changes
+
+- [#6](https://github.com/mjangir/nestjs-hybrid-auth/pull/6) [`00d021f`](https://github.com/mjangir/nestjs-hybrid-auth/commit/00d021f8a738cc9d780d74a1867784b772d4eafe) Thanks [@mjangir](https://github.com/mjangir)! - Added Twitch Authentication in all
+
+### Patch Changes
+
+- Updated dependencies [[`00d021f`](https://github.com/mjangir/nestjs-hybrid-auth/commit/00d021f8a738cc9d780d74a1867784b772d4eafe)]:
+  - @nestjs-hybrid-auth/twitch@1.0.0
+
 ## 1.0.1
 
 ### Patch Changes
