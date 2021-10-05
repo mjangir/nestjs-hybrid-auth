@@ -1,5 +1,16 @@
 # @nestjs-hybrid-auth/all
 
+## 1.2.0
+
+### Minor Changes
+
+- [#8](https://github.com/mjangir/nestjs-hybrid-auth/pull/8) [`c33868a`](https://github.com/mjangir/nestjs-hybrid-auth/commit/c33868a53c3429b44326a37dd3a2db619fb6836e) Thanks [@mjangir](https://github.com/mjangir)! - Added Okta authentication
+
+### Patch Changes
+
+- Updated dependencies [[`c33868a`](https://github.com/mjangir/nestjs-hybrid-auth/commit/c33868a53c3429b44326a37dd3a2db619fb6836e)]:
+  - @nestjs-hybrid-auth/okta@1.0.0
+
 ## 1.1.0
 
 ### Minor Changes

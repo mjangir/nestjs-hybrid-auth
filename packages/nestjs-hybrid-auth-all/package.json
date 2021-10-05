@@ -1,7 +1,7 @@
 {
   "name": "@nestjs-hybrid-auth/all",
   "description": "NestJS social authentication provider using passportJS",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "license": "MIT",
   "author": "Manish Jangir <mjangir70@gmail.com> (https://manishjangir.com)",
   "repository": {
@@ -52,6 +52,6 @@
     "@nestjs-hybrid-auth/github": "^1.0.0",
     "@nestjs-hybrid-auth/twitter": "^1.0.0",
     "@nestjs-hybrid-auth/twitch": "^1.0.0",
-    "@nestjs-hybrid-auth/okta": "^0.0.0"
+    "@nestjs-hybrid-auth/okta": "^1.0.0"
   }
 }
