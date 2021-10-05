@@ -6,6 +6,7 @@ import { FacebookAuthModule } from '@nestjs-hybrid-auth/facebook';
 import { InstagramAuthModule } from '@nestjs-hybrid-auth/instagram';
 import { GithubAuthModule } from '@nestjs-hybrid-auth/github';
 import { TwitchAuthModule } from '@nestjs-hybrid-auth/twitch';
+import { OktaAuthModule } from '@nestjs-hybrid-auth/okta';
 import {
   HybridAuthModuleOptions,
   HybridAuthModuleAsyncOptions,
@@ -20,6 +21,7 @@ function createHybridAuthImports(options: HybridAuthModuleOptions): any {
     options.instagram && InstagramAuthModule.forRoot(options.instagram),
     options.github && GithubAuthModule.forRoot(options.github),
     options.twitch && TwitchAuthModule.forRoot(options.twitch),
+    options.okta && OktaAuthModule.forRoot(options.okta),
   ].filter(Boolean);
 }
 
@@ -62,6 +64,10 @@ export class HybridAuthModule {
 
     if (options.twitch) {
       imports.push(TwitchAuthModule.forRootAsync(options.twitch));
+    }
+
+    if (options.okta) {
+      imports.push(OktaAuthModule.forRootAsync(options.okta));
     }
 
     return {
