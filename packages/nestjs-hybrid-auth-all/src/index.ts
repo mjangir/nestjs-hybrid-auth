@@ -5,6 +5,7 @@ export * from '@nestjs-hybrid-auth/github';
 export * from '@nestjs-hybrid-auth/twitter';
 export * from '@nestjs-hybrid-auth/linkedin';
 export * from '@nestjs-hybrid-auth/twitch';
+export * from '@nestjs-hybrid-auth/shopify';
 export * from '@nestjs-hybrid-auth/okta';
 export * from './hybrid-auth.module';
 export * from './hybrid-auth.options';

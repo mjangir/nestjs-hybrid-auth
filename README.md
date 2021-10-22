@@ -130,6 +130,7 @@ class AuthController {
 - [GitHub](https://nestjs-hybrid-auth.manishjangir.com/docs/providers/github)
 - [Instagram](https://nestjs-hybrid-auth.manishjangir.com/docs/providers/instagram)
 - [Twitch](https://nestjs-hybrid-auth.manishjangir.com/docs/providers/twitch)
+- [Shopify](https://nestjs-hybrid-auth.manishjangir.com/docs/providers/shopify)
 - [Okta](https://nestjs-hybrid-auth.manishjangir.com/docs/providers/okta)
 
 ## Related
