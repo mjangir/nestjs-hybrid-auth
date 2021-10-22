@@ -1,7 +1,7 @@
 {
   "name": "@nestjs-hybrid-auth/shopify",
   "description": "NestJS shopify authentication using passport",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "license": "MIT",
   "author": "Manish Jangir <mjangir70@gmail.com> (https://manishjangir.com)",
   "repository": {
