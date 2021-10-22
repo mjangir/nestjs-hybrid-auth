@@ -9,6 +9,7 @@ import { FacebookAuthModuleOptions } from '@nestjs-hybrid-auth/facebook';
 import { InstagramAuthModuleOptions } from '@nestjs-hybrid-auth/instagram';
 import { GithubAuthModuleOptions } from '@nestjs-hybrid-auth/github';
 import { TwitchAuthModuleOptions } from '@nestjs-hybrid-auth/twitch';
+import { ShopifyAuthModuleOptions } from '@nestjs-hybrid-auth/shopify';
 import { OktaAuthModuleOptions } from '@nestjs-hybrid-auth/okta';
 
 export interface HybridAuthModuleOptions {
@@ -19,6 +20,7 @@ export interface HybridAuthModuleOptions {
   instagram?: InstagramAuthModuleOptions;
   github?: GithubAuthModuleOptions;
   twitch?: TwitchAuthModuleOptions;
+  shopify?: ShopifyAuthModuleOptions;
   okta?: OktaAuthModuleOptions;
 }
 
@@ -50,6 +52,10 @@ export interface HybridAuthModuleAsyncOptions {
   twitch?: IdentityModuleAsyncOptions<
     IdentityModuleOptionsFactory<TwitchAuthModuleOptions>,
     TwitchAuthModuleOptions
+  >;
+  shopify?: IdentityModuleAsyncOptions<
+    IdentityModuleOptionsFactory<ShopifyAuthModuleOptions>,
+    ShopifyAuthModuleOptions
   >;
   okta?: IdentityModuleAsyncOptions<
     IdentityModuleOptionsFactory<OktaAuthModuleOptions>,
