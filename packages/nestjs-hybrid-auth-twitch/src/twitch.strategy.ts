@@ -1,6 +1,6 @@
 import { Injectable, Inject } from '@nestjs/common';
 import { PassportStrategy } from '@nestjs/passport';
-import { Strategy } from 'passport-twitch-latest';
+import { Strategy } from '@hewmen/passport-twitch';
 import { merge } from 'lodash';
 import { TwitchAuthModuleOptions, TwitchAuthResult } from './twitch.types';
 import { TWITCH_HYBRID_AUTH_OPTIONS } from './twitch.constants';

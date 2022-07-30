@@ -5,6 +5,6 @@
     "allowJs": false,
     "baseUrl": ".",
     "typeRoots": ["./node_modules/@types", "./types"],
-    "types": ["passport-twitch-latest"]
+    "types": []
   }
 }

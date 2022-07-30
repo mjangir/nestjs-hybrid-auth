@@ -10,7 +10,7 @@
     "test": "lerna run test --",
     "build": "lerna run build",
     "prepublish": "lerna run prepublish",
-    "format": "prettier --write 'website/src/**/*.{ts,tsx,js,jsx,md,mdx}' 'website/docs/**/*.{md,mdx}' 'packages/*/src/**/*' 'README.md'",
+    "format": "prettier --write website/src/**/*.{ts,tsx,js,jsx,md,mdx} website/docs/**/*.{md,mdx} packages/*/src/**/* README.md",
     "changeset": "changeset",
     "release": "changeset publish",
     "postinstall": "husky install",
