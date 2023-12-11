@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
     title: 'NestJS Hybrid Auth',
     tagline: 'Integrate social logins in your NestJS application seamlessly',
     url: 'https://mjangir.github.io/nestjs-hybrid-auth',
-    baseUrl: '/',
+    baseUrl: '/nestjs-hybrid-auth/',
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
     favicon: 'img/favicon.ico',
